@@ -1,8 +1,8 @@
 const numberOfWins = +process.argv[2];
 const numberOfRounds = +process.argv[3];
-const weapons = ['rock' , 'paper', 'scissors'];
+const weapons = ['rock' , 'paper', 'scissors', 'lizard', 'Spock'];
 const weaponOfChoice = () => {
-  return weapons[parseInt(Math.random()*weapons.length) %3];
+  return weapons[parseInt(Math.random()*weapons.length) %5];
 }
 const result = (winLoseDraw) => {
   switch (winLoseDraw) {
@@ -23,13 +23,19 @@ const whoWins = (playerOne, playerTwo) => {
     case playerOne === playerTwo:
       result('draw');
       break;
-      case playerOne === weapons[0] && playerTwo === weapons[2]:
+      case playerOne === weapons[0] && playerTwo === weapons[2] || weapons[3]:
       result('win');
       break;
-      case playerOne === weapons[1] && playerTwo === weapons[0]:
+      case playerOne === weapons[1] && playerTwo === weapons[0] || weapons[4]:
       result('win');
       break;
-      case playerOne === weapons[2] && playerTwo === weapons[1]:
+      case playerOne === weapons[2] && playerTwo === weapons[1] || weapons[3]:
+      result('win');
+      break;
+      case playerOne === weapons[3] && playerTwo === weapons[1] || weapons[4]:
+      result('win');
+      break;
+      case playerOne === weapons[4] && playerTwo === weapons[0] || weapons[2]:
       result('win');
       break;
       default:
