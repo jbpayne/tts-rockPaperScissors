@@ -1,4 +1,5 @@
-const numberOfRounds = process.argv[2];
+const numberOfWins = +process.argv[2];
+const numberOfRounds = +process.argv[3];
 const weapons = ['rock' , 'paper', 'scissors'];
 const weaponOfChoice = () => {
   return weapons[parseInt(Math.random()*weapons.length) %3];
@@ -46,7 +47,11 @@ for (let i = 0; i < numberOfRounds; i++) {
   console.log(`Round ${i + 1}:`);
   console.log(`Player 1: ${playerOneMoves[i]}`);
   console.log(`Player 2: ${playerTwoMoves[i]}`);
-  whoWins(playerOneMoves[i], playerTwoMoves[i])
+  whoWins(playerOneMoves[i], playerTwoMoves[i]);
+  if (playerOneScore === numberOfWins || playerTwoScore === numberOfWins) {
+    console.log(playerOneScore === numberOfWins ? `Player 1 won ${numberOfWins} rounds out of ${numberOfRounds}. Player 1 wins!` : `Player 2 won ${numberOfWins} rounds out of ${numberOfRounds}. Player 2 wins!`);
+    return true;
+  }
 }
 console.log(`Player 1 score: ${playerOneScore}`);
 console.log(`Player 2 score: ${playerTwoScore}`);
