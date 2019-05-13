@@ -49,7 +49,7 @@ for (let i = 0; i < numberOfRounds; i++) {
   console.log(`Player 2: ${playerTwoMoves[i]}`);
   whoWins(playerOneMoves[i], playerTwoMoves[i]);
   if (playerOneScore === numberOfWins || playerTwoScore === numberOfWins) {
-    console.log(playerOneScore === numberOfWins ? `Player 1 won ${numberOfWins} rounds out of ${numberOfRounds}. Player 1 wins!` : `Player 2 won ${numberOfWins} rounds out of ${numberOfRounds}. Player 2 wins!`);
+    console.log(playerOneScore === numberOfWins ? `Player 1 won ${numberOfWins} rounds out of ${numberOfRounds}. Player 1 wins the game!` : `Player 2 won ${numberOfWins} rounds out of ${numberOfRounds}. Player 2 wins the game!`);
     return true;
   }
 }
